@@ -1,0 +1,21 @@
+# Ambientes virtuais
+.venv/
+.venv-graphs/
+venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Artefatos gerados pelo pipeline / scripts
+test-results.json
+metrics_snapshot.json
+
+# Dados e saídas geradas localmente (regeneráveis)
+metrics.csv
+graphs/
+entregaveis/
+
+# Sistema operacional
+.DS_Store
