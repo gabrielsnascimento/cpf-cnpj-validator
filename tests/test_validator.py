@@ -18,6 +18,11 @@ class TestLento:
         assert validate_cpf("529.982.247-25") is True
 
 
+class TestFalhaProposital:
+    def test_que_vai_falhar(self):  # 529.982.247-25 É válido, "is False" quebra de propósito
+        assert validate_cpf("529.982.247-25") is False
+
+
 class TestCPFValidos:
     def test_cpf_sem_formatacao(self):
         assert validate_cpf("52998224725") is True
