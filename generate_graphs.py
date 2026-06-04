@@ -23,7 +23,7 @@ def is_success(status):
 
 
 def make_labels(df):
-    """Rótulo do eixo X: número da execução + commit sha (ex: '1\nabc1234')."""
+    """Rótulo do eixo X: número da execução + commit sha (ex: '1\n<sha>')."""
     return [f"{i + 1}\n{sha}" for i, sha in enumerate(df["commit_sha"])]
 
 
