@@ -8,14 +8,12 @@ __pycache__/
 *.pyc
 .pytest_cache/
 
-# Artefatos gerados pelo pipeline / scripts
+# Artefatos transitórios gerados pelo CI / pytest (não são entregáveis)
 test-results.json
 metrics_snapshot.json
 
-# Dados e saídas geradas localmente (regeneráveis)
-metrics.csv
-graphs/
-entregaveis/
+# Observação: metrics.csv, graphs/ e entregaveis/ SÃO entregáveis e ficam
+# versionados de propósito (o REPORT.md referencia as imagens de graphs/).
 
 # Sistema operacional
 .DS_Store
