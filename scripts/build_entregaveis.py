@@ -4,10 +4,9 @@ Copia os 4 gráficos de graphs/, o metrics.csv e o REPORT.md para
 entregaveis/, criando a estrutura necessária. Encerra com mensagem de erro
 clara se algum arquivo obrigatório estiver faltando.
 
-Usa apenas stdlib: shutil, os, pathlib, sys.
+Usa apenas stdlib: shutil, pathlib, sys.
 """
 
-import os
 import shutil
 import sys
 from pathlib import Path
@@ -27,6 +26,7 @@ def check_required():
     """Verifica se todos os arquivos obrigatórios existem; lista os ausentes."""
     required = [ROOT / "graphs" / name for name in GRAPH_NAMES]
     required.append(ROOT / "metrics.csv")
+    required.append(ROOT / "metrics_steps.csv")
     required.append(ROOT / "REPORT.md")
 
     missing = [p for p in required if not p.is_file()]
@@ -61,8 +61,8 @@ def main():
         copied.append(dst)
         print(f"Copiado: {src.relative_to(ROOT)} -> {dst.relative_to(ROOT)}")
 
-    # Copia metrics.csv e REPORT.md
-    for name in ("metrics.csv", "REPORT.md"):
+    # Copia metrics.csv, metrics_steps.csv e REPORT.md
+    for name in ("metrics.csv", "metrics_steps.csv", "REPORT.md"):
         src = ROOT / name
         dst = DEST / name
         shutil.copy2(src, dst)

@@ -1,13 +1,13 @@
-run_id,commit_sha,commit_message,status,workflow_duration,job_lint_duration,job_test_duration,job_metrics_duration,test_count,test_failures,test_passed,test_duration_s,timestamp
-26972531902,17851aa,ci: reordena jobs para test -> lint -> metrics,success,68.0,23.0,26.0,9.0,28,0,28,3.0560765266418457,2026-06-04T18:50:28Z
-26972043069,108fd3c,docs: adiciona readme a atividade,success,64.0,23.0,25.0,8.0,28,0,28,3.0568063259124756,2026-06-04T18:40:48Z
-26971648030,75b1629,ci: volta jobs para execucao sequencial,success,60.0,18.0,23.0,9.0,28,0,28,3.055529832839966,2026-06-04T18:33:06Z
-26971401966,dc63982,ci: roda lint e test em paralelo,success,38.0,21.0,22.0,9.0,28,0,28,3.0510942935943604,2026-06-04T18:28:04Z
-26970928532,acfce10,fix: corrige teste que falhava,success,58.0,20.0,23.0,7.0,28,0,28,3.0523293018341064,2026-06-04T18:19:15Z
-26970688504,956ef61,test: introduz falha proposital de teste,failure,59.0,19.0,25.0,7.0,28,1,27,3.07258677482605,2026-06-04T18:14:38Z
-26970365493,14870b3,build: adiciona dependencia (invalida cache),success,66.0,21.0,29.0,8.0,27,0,27,3.0391905307769775,2026-06-04T18:08:31Z
-26970190389,c9b9ccb,test: adiciona teste lento,success,68.0,21.0,27.0,10.0,27,0,27,3.049328327178955,2026-06-04T18:05:14Z
-26969896780,5ac95ba,fix: corrige erro de linha vazia,success,61.0,21.0,21.0,10.0,26,0,26,0.04728412628173828,2026-06-04T17:59:40Z
-26969694352,ec10d95,test: adiciona mais um teste de CNPJ,failure,32.0,18.0,0.0,8.0,0,0,0,0,2026-06-04T17:55:18Z
-26967836547,5a11dbe,docs: comentario no validador,success,55.0,19.0,19.0,9.0,25,0,25,0.04644179344177246,2026-06-04T17:20:26Z
-26967135421,dbc72d6,feat: configuração inicial do projeto,success,68.0,24.0,21.0,13.0,25,0,25,0.04371047019958496,2026-06-04T17:07:24Z
+run_id,commit_sha,commit_message,status,workflow_duration,job_lint_duration,job_test_duration,job_metrics_duration,test_count,test_failures,test_passed,test_duration_s,test_avg_duration_s,timestamp
+26972531902,17851aa,ci: reordena jobs para test -> lint -> metrics,success,68.0,23.0,26.0,9.0,28,0,28,3.0560765266418457,0.109146,2026-06-04T18:50:28Z
+26972043069,108fd3c,docs: adiciona readme a atividade,success,64.0,23.0,25.0,8.0,28,0,28,3.0568063259124756,0.109172,2026-06-04T18:40:48Z
+26971648030,75b1629,ci: volta jobs para execucao sequencial,success,60.0,18.0,23.0,9.0,28,0,28,3.055529832839966,0.109126,2026-06-04T18:33:06Z
+26971401966,dc63982,ci: roda lint e test em paralelo,success,38.0,21.0,22.0,9.0,28,0,28,3.0510942935943604,0.108968,2026-06-04T18:28:04Z
+26970928532,acfce10,fix: corrige teste que falhava,success,58.0,20.0,23.0,7.0,28,0,28,3.0523293018341064,0.109012,2026-06-04T18:19:15Z
+26970688504,956ef61,test: introduz falha proposital de teste,failure,59.0,19.0,25.0,7.0,28,1,27,3.07258677482605,0.109735,2026-06-04T18:14:38Z
+26970365493,14870b3,build: adiciona dependencia (invalida cache),success,66.0,21.0,29.0,8.0,27,0,27,3.0391905307769775,0.112563,2026-06-04T18:08:31Z
+26970190389,c9b9ccb,test: adiciona teste lento,success,68.0,21.0,27.0,10.0,27,0,27,3.049328327178955,0.112938,2026-06-04T18:05:14Z
+26969896780,5ac95ba,fix: corrige erro de linha vazia,success,61.0,21.0,21.0,10.0,26,0,26,0.04728412628173828,0.001819,2026-06-04T17:59:40Z
+26969694352,ec10d95,test: adiciona mais um teste de CNPJ,failure,32.0,18.0,0.0,8.0,0,0,0,0,0,2026-06-04T17:55:18Z
+26967836547,5a11dbe,docs: comentario no validador,success,55.0,19.0,19.0,9.0,25,0,25,0.04644179344177246,0.001858,2026-06-04T17:20:26Z
+26967135421,dbc72d6,feat: configuração inicial do projeto,success,68.0,24.0,21.0,13.0,25,0,25,0.04371047019958496,0.001748,2026-06-04T17:07:24Z

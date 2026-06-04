@@ -117,13 +117,20 @@ retornados pela API):
 | 26967836547 | 5a11dbe | success | 55 | 19 | 19 | 9 | 25 | 0 | 0.046 |
 | 26967135421 | dbc72d6 | success | 68 | 24 | 21 | 13 | 25 | 0 | 0.044 |
 
-> Estrutura do CSV (formato *wide*): `run_id, commit_sha, commit_message, status,
-> workflow_duration, job_lint_duration, job_test_duration, job_metrics_duration,
-> test_count, test_failures, test_passed, test_duration_s, timestamp`. É
-> equivalente (superset) ao formato sugerido na atividade — em vez de linhas
-> `job_name/job_duration`, cada job vira uma coluna, e ainda inclui `test_passed`
-> e `test_duration_s`. O **tempo médio dos testes** é derivável por
-> `test_duration_s / test_count`.
+> **Estrutura do CSV** (formato *wide*): `run_id, commit_sha, commit_message,
+> status, workflow_duration, job_lint_duration, job_test_duration,
+> job_metrics_duration, test_count, test_failures, test_passed, test_duration_s,
+> **test_avg_duration_s**, timestamp`. É equivalente (superset) ao formato
+> sugerido na atividade — em vez de linhas `job_name/job_duration`, cada job vira
+> uma coluna. O **tempo médio dos testes** está explícito na coluna
+> `test_avg_duration_s` (= `test_duration_s / test_count`).
+>
+> **Tempo por etapa (`metrics_steps.csv`):** além do CSV principal, o
+> `collect_metrics.py` gera um segundo arquivo em formato *long* — `run_id,
+> commit_sha, job_name, step_name, step_duration_s, conclusion` — com a duração
+> de **cada step** (etapa) de cada job (checkout, install, pytest, flake8, ...),
+> extraída da API. São 361 linhas (steps) das 12 execuções, atendendo
+> diretamente ao requisito de "tempo de cada etapa relevante".
 
 ---
 
@@ -176,13 +183,24 @@ embaixo, em 38s, apesar de ter os mesmos 28 testes das vizinhas.
 ### 6.1 Qual etapa mais contribuiu para o tempo total do pipeline?
 
 A etapa dominante é a **instalação de dependências** (`pip install -r
-requirements.txt`), repetida em cada job. Os jobs `lint` (~18–24s) e `test`
-(~19–29s) têm peso parecido, e em ambos o tempo é gasto quase todo em *setup do
-ambiente* (checkout + setup-python + install), **não** na ferramenta em si: o
-`flake8` roda em <1s e o `pytest` em 0,04–3s. Como o pipeline é sequencial e cada
-job provisiona um runner novo, esse custo de instalação é pago **três vezes** por
-execução. Portanto, a maior contribuição ao tempo total não vem dos testes nem do
-lint, e sim do **overhead repetido de preparar o ambiente**.
+requirements.txt`), repetida em cada job. Isso é comprovado pelos dados de
+**step** coletados em `metrics_steps.csv` — média por etapa:
+
+| Step (etapa) | Duração média |
+|---|---:|
+| **Install dependencies** | **13,4s** |
+| Run pytest | 2,6s |
+| Install requests (job metrics) | 2,5s |
+| Cache pip | 1,5s |
+| Set up job | 1,2s |
+| **Run flake8** | **0,4s** |
+| Setup Python 3.12 | 0,3s |
+
+Ou seja: o `flake8` em si leva 0,4s e o `pytest` ~2,6s (quase todo do `sleep`
+artificial), mas **instalar dependências leva 13,4s** — e como o pipeline é
+sequencial e cada job provisiona um runner novo, esse custo é pago **três vezes**
+por execução. A maior contribuição ao tempo total não vem de testar nem de
+lintar, e sim do **overhead repetido de preparar o ambiente**.
 
 ### 6.2 Houve diferença significativa entre execuções com e sem cache?
 
@@ -268,14 +286,14 @@ resumo: é aceitável, mas longe do ótimo possível.
 ### 7.1 O gargalo não são os testes — é a instalação de dependências
 
 - **Hipótese inicial:** o job `test` (rodar o pytest) seria o maior responsável pelo tempo, e aumentar o número de testes encareceria o pipeline.
-- **Resultado observado:** o `pytest` roda em **0,04–3s**, irrelevante perto dos ~20s de *setup + install* de cada job. Mesmo o teste lento (`sleep(3)`, run `c9b9ccb`) mal mexeu no tempo total (68s, dentro da faixa normal). O `test_count` não tem correlação visível com a duração (gráfico 5.4).
+- **Resultado observado:** os dados de step mostram `Run pytest` em ~2,6s e `Run flake8` em **0,4s**, contra **13,4s** do `Install dependencies` — irrelevantes perto do *setup + install* de cada job. Mesmo o teste lento (`sleep(3)`, run `c9b9ccb`) mal mexeu no tempo total (68s, dentro da faixa normal). O `test_count` não tem correlação visível com a duração (gráfico 5.4).
 - **Explicação:** o custo real do CI é **preparar o ambiente** (checkout, setup-python, `pip install`), pago a cada job — e não o trabalho de testar/lintar em si.
 
 ### 7.2 O job de lint é quase tão "caro" quanto o de teste
 
 - **Hipótese inicial:** o `lint` seria o job mais leve e rápido, já que o `flake8` é uma checagem estática trivial.
-- **Resultado observado:** `lint` levou ~18–24s, **praticamente igual** ao `test` (~19–29s), apesar de o `flake8` em si rodar em menos de 1 segundo.
-- **Explicação:** o job `lint` também faz checkout + setup-python + **instala o `requirements.txt` inteiro** (incluindo `pandas` e `matplotlib`, que ele nem usa). Quase todo o tempo do `lint` é overhead — o que reforça diretamente a melhoria #2 da seção 6.6.
+- **Resultado observado:** `lint` levou ~18–24s, **praticamente igual** ao `test` (~19–29s), apesar de o step `Run flake8` em si gastar apenas **0,4s**.
+- **Explicação:** os steps revelam que o job `lint` gasta ~15s só no `Install dependencies` — ele faz checkout + setup-python + **instala o `requirements.txt` inteiro** (incluindo `pandas` e `matplotlib`, que ele nem usa). Quase todo o tempo do `lint` é overhead de instalação — o que reforça diretamente a melhoria #2 da seção 6.6.
 
 ---
 
@@ -286,7 +304,7 @@ resumo: é aceitável, mas longe do ótimo possível.
 3. **Amostra pequena (12 execuções)** — insuficiente para significância estatística; um único outlier distorce médias.
 4. **Dependência de rede para instalar pacotes** — o tempo do `pip install`, que é o gargalo, depende da disponibilidade do PyPI e do estado do cache.
 5. **Suíte de testes muito rápida** — exceto pelo `sleep` artificial, os testes rodam em milissegundos, ofuscando o efeito do `test_count`.
-6. **Métricas em nível de job, não de step** — não há tempo isolado por etapa interna; algumas conclusões (ex.: "o gargalo é o install") são inferidas a partir da composição dos jobs.
+6. **Resolução temporal de 1 segundo** — a API do GitHub reporta os timestamps de steps com precisão de segundos, então etapas muito curtas (`flake8`, `setup-python`) aparecem arredondadas (0–1s), limitando a precisão da medição das etapas mais rápidas.
 
 ---
 
@@ -312,9 +330,11 @@ resumo: é aceitável, mas longe do ótimo possível.
 4. **Coletar as métricas reais:**
    ```bash
    export GITHUB_TOKEN=$(gh auth token)
-   python collect_metrics.py --repo gabrielsnascimento/cpf-cnpj-validator
+   python collect_metrics.py --repo gabrielsnascimento/cpf-cnpj-validator --max-runs 12
    ```
-   → gera o `metrics.csv`.
+   → gera o `metrics.csv` (resumo por run) e o `metrics_steps.csv` (tempo por
+   etapa). O `--max-runs 12` restringe às 12 execuções do experimento
+   controlado, ignorando commits de documentação feitos depois.
 
 5. **Gerar os gráficos:**
    ```bash

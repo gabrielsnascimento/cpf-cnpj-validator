@@ -1,0 +1,362 @@
+run_id,commit_sha,job_name,step_name,step_duration_s,conclusion
+26972531902,17851aa,test,Set up job,1.0,success
+26972531902,17851aa,test,Checkout,1.0,success
+26972531902,17851aa,test,Setup Python 3.12,0.0,success
+26972531902,17851aa,test,Cache pip,3.0,success
+26972531902,17851aa,test,Install dependencies,12.0,success
+26972531902,17851aa,test,Run pytest,4.0,success
+26972531902,17851aa,test,Upload test results,1.0,success
+26972531902,17851aa,test,Post Cache pip,0.0,success
+26972531902,17851aa,test,Post Setup Python 3.12,0.0,success
+26972531902,17851aa,test,Post Checkout,0.0,success
+26972531902,17851aa,test,Complete job,0.0,success
+26972531902,17851aa,lint,Set up job,1.0,success
+26972531902,17851aa,lint,Checkout,1.0,success
+26972531902,17851aa,lint,Setup Python 3.12,0.0,success
+26972531902,17851aa,lint,Cache pip,3.0,success
+26972531902,17851aa,lint,Install dependencies,13.0,success
+26972531902,17851aa,lint,Run flake8,0.0,success
+26972531902,17851aa,lint,Post Cache pip,0.0,success
+26972531902,17851aa,lint,Post Setup Python 3.12,0.0,success
+26972531902,17851aa,lint,Post Checkout,1.0,success
+26972531902,17851aa,lint,Complete job,0.0,success
+26972531902,17851aa,metrics,Set up job,1.0,success
+26972531902,17851aa,metrics,Checkout,1.0,success
+26972531902,17851aa,metrics,Setup Python 3.12,0.0,success
+26972531902,17851aa,metrics,Install requests,3.0,success
+26972531902,17851aa,metrics,Download test results,0.0,success
+26972531902,17851aa,metrics,Snapshot metrics,0.0,success
+26972531902,17851aa,metrics,Upload metrics snapshot,1.0,success
+26972531902,17851aa,metrics,Post Setup Python 3.12,0.0,success
+26972531902,17851aa,metrics,Post Checkout,0.0,success
+26972531902,17851aa,metrics,Complete job,0.0,success
+26972043069,108fd3c,lint,Set up job,1.0,success
+26972043069,108fd3c,lint,Checkout,1.0,success
+26972043069,108fd3c,lint,Setup Python 3.12,0.0,success
+26972043069,108fd3c,lint,Cache pip,3.0,success
+26972043069,108fd3c,lint,Install dependencies,13.0,success
+26972043069,108fd3c,lint,Run flake8,1.0,success
+26972043069,108fd3c,lint,Post Cache pip,0.0,success
+26972043069,108fd3c,lint,Post Setup Python 3.12,0.0,success
+26972043069,108fd3c,lint,Post Checkout,0.0,success
+26972043069,108fd3c,lint,Complete job,0.0,success
+26972043069,108fd3c,test,Set up job,1.0,success
+26972043069,108fd3c,test,Checkout,1.0,success
+26972043069,108fd3c,test,Setup Python 3.12,0.0,success
+26972043069,108fd3c,test,Cache pip,1.0,success
+26972043069,108fd3c,test,Install dependencies,14.0,success
+26972043069,108fd3c,test,Run pytest,4.0,success
+26972043069,108fd3c,test,Upload test results,0.0,success
+26972043069,108fd3c,test,Post Cache pip,1.0,success
+26972043069,108fd3c,test,Post Setup Python 3.12,0.0,success
+26972043069,108fd3c,test,Post Checkout,0.0,success
+26972043069,108fd3c,test,Complete job,0.0,success
+26972043069,108fd3c,metrics,Set up job,1.0,success
+26972043069,108fd3c,metrics,Checkout,1.0,success
+26972043069,108fd3c,metrics,Setup Python 3.12,0.0,success
+26972043069,108fd3c,metrics,Install requests,2.0,success
+26972043069,108fd3c,metrics,Download test results,0.0,success
+26972043069,108fd3c,metrics,Snapshot metrics,0.0,success
+26972043069,108fd3c,metrics,Upload metrics snapshot,1.0,success
+26972043069,108fd3c,metrics,Post Setup Python 3.12,0.0,success
+26972043069,108fd3c,metrics,Post Checkout,0.0,success
+26972043069,108fd3c,metrics,Complete job,1.0,success
+26971648030,75b1629,lint,Set up job,1.0,success
+26971648030,75b1629,lint,Checkout,1.0,success
+26971648030,75b1629,lint,Setup Python 3.12,0.0,success
+26971648030,75b1629,lint,Cache pip,1.0,success
+26971648030,75b1629,lint,Install dependencies,13.0,success
+26971648030,75b1629,lint,Run flake8,0.0,success
+26971648030,75b1629,lint,Post Cache pip,0.0,success
+26971648030,75b1629,lint,Post Setup Python 3.12,1.0,success
+26971648030,75b1629,lint,Post Checkout,0.0,success
+26971648030,75b1629,lint,Complete job,0.0,success
+26971648030,75b1629,test,Set up job,1.0,success
+26971648030,75b1629,test,Checkout,1.0,success
+26971648030,75b1629,test,Setup Python 3.12,0.0,success
+26971648030,75b1629,test,Cache pip,1.0,success
+26971648030,75b1629,test,Install dependencies,14.0,success
+26971648030,75b1629,test,Run pytest,3.0,success
+26971648030,75b1629,test,Upload test results,1.0,success
+26971648030,75b1629,test,Post Cache pip,0.0,success
+26971648030,75b1629,test,Post Setup Python 3.12,0.0,success
+26971648030,75b1629,test,Post Checkout,1.0,success
+26971648030,75b1629,test,Complete job,0.0,success
+26971648030,75b1629,metrics,Set up job,2.0,success
+26971648030,75b1629,metrics,Checkout,0.0,success
+26971648030,75b1629,metrics,Setup Python 3.12,1.0,success
+26971648030,75b1629,metrics,Install requests,1.0,success
+26971648030,75b1629,metrics,Download test results,1.0,success
+26971648030,75b1629,metrics,Snapshot metrics,0.0,success
+26971648030,75b1629,metrics,Upload metrics snapshot,1.0,success
+26971648030,75b1629,metrics,Post Setup Python 3.12,0.0,success
+26971648030,75b1629,metrics,Post Checkout,0.0,success
+26971648030,75b1629,metrics,Complete job,0.0,success
+26971401966,dc63982,lint,Set up job,1.0,success
+26971401966,dc63982,lint,Checkout,1.0,success
+26971401966,dc63982,lint,Setup Python 3.12,0.0,success
+26971401966,dc63982,lint,Cache pip,1.0,success
+26971401966,dc63982,lint,Install dependencies,15.0,success
+26971401966,dc63982,lint,Run flake8,1.0,success
+26971401966,dc63982,lint,Post Cache pip,0.0,success
+26971401966,dc63982,lint,Post Setup Python 3.12,0.0,success
+26971401966,dc63982,lint,Post Checkout,0.0,success
+26971401966,dc63982,lint,Complete job,0.0,success
+26971401966,dc63982,test,Set up job,1.0,success
+26971401966,dc63982,test,Checkout,0.0,success
+26971401966,dc63982,test,Setup Python 3.12,0.0,success
+26971401966,dc63982,test,Cache pip,1.0,success
+26971401966,dc63982,test,Install dependencies,13.0,success
+26971401966,dc63982,test,Run pytest,3.0,success
+26971401966,dc63982,test,Upload test results,1.0,success
+26971401966,dc63982,test,Post Cache pip,0.0,success
+26971401966,dc63982,test,Post Setup Python 3.12,0.0,success
+26971401966,dc63982,test,Post Checkout,1.0,success
+26971401966,dc63982,test,Complete job,0.0,success
+26971401966,dc63982,metrics,Set up job,2.0,success
+26971401966,dc63982,metrics,Checkout,0.0,success
+26971401966,dc63982,metrics,Setup Python 3.12,1.0,success
+26971401966,dc63982,metrics,Install requests,2.0,success
+26971401966,dc63982,metrics,Download test results,0.0,success
+26971401966,dc63982,metrics,Snapshot metrics,0.0,success
+26971401966,dc63982,metrics,Upload metrics snapshot,1.0,success
+26971401966,dc63982,metrics,Post Setup Python 3.12,0.0,success
+26971401966,dc63982,metrics,Post Checkout,0.0,success
+26971401966,dc63982,metrics,Complete job,1.0,success
+26970928532,acfce10,lint,Set up job,1.0,success
+26970928532,acfce10,lint,Checkout,1.0,success
+26970928532,acfce10,lint,Setup Python 3.12,0.0,success
+26970928532,acfce10,lint,Cache pip,2.0,success
+26970928532,acfce10,lint,Install dependencies,12.0,success
+26970928532,acfce10,lint,Run flake8,0.0,success
+26970928532,acfce10,lint,Post Cache pip,0.0,success
+26970928532,acfce10,lint,Post Setup Python 3.12,0.0,success
+26970928532,acfce10,lint,Post Checkout,0.0,success
+26970928532,acfce10,lint,Complete job,1.0,success
+26970928532,acfce10,test,Set up job,1.0,success
+26970928532,acfce10,test,Checkout,1.0,success
+26970928532,acfce10,test,Setup Python 3.12,0.0,success
+26970928532,acfce10,test,Cache pip,1.0,success
+26970928532,acfce10,test,Install dependencies,13.0,success
+26970928532,acfce10,test,Run pytest,4.0,success
+26970928532,acfce10,test,Upload test results,1.0,success
+26970928532,acfce10,test,Post Cache pip,0.0,success
+26970928532,acfce10,test,Post Setup Python 3.12,0.0,success
+26970928532,acfce10,test,Post Checkout,0.0,success
+26970928532,acfce10,test,Complete job,0.0,success
+26970928532,acfce10,metrics,Set up job,1.0,success
+26970928532,acfce10,metrics,Checkout,1.0,success
+26970928532,acfce10,metrics,Setup Python 3.12,0.0,success
+26970928532,acfce10,metrics,Install requests,2.0,success
+26970928532,acfce10,metrics,Download test results,0.0,success
+26970928532,acfce10,metrics,Snapshot metrics,0.0,success
+26970928532,acfce10,metrics,Upload metrics snapshot,1.0,success
+26970928532,acfce10,metrics,Post Setup Python 3.12,0.0,success
+26970928532,acfce10,metrics,Post Checkout,0.0,success
+26970928532,acfce10,metrics,Complete job,0.0,success
+26970688504,956ef61,lint,Set up job,0.0,success
+26970688504,956ef61,lint,Checkout,1.0,success
+26970688504,956ef61,lint,Setup Python 3.12,0.0,success
+26970688504,956ef61,lint,Cache pip,1.0,success
+26970688504,956ef61,lint,Install dependencies,14.0,success
+26970688504,956ef61,lint,Run flake8,0.0,success
+26970688504,956ef61,lint,Post Cache pip,0.0,success
+26970688504,956ef61,lint,Post Setup Python 3.12,0.0,success
+26970688504,956ef61,lint,Post Checkout,1.0,success
+26970688504,956ef61,lint,Complete job,0.0,success
+26970688504,956ef61,test,Set up job,1.0,success
+26970688504,956ef61,test,Checkout,0.0,success
+26970688504,956ef61,test,Setup Python 3.12,1.0,success
+26970688504,956ef61,test,Cache pip,2.0,success
+26970688504,956ef61,test,Install dependencies,13.0,success
+26970688504,956ef61,test,Run pytest,4.0,failure
+26970688504,956ef61,test,Upload test results,1.0,success
+26970688504,956ef61,test,Post Cache pip,0.0,skipped
+26970688504,956ef61,test,Post Setup Python 3.12,0.0,skipped
+26970688504,956ef61,test,Post Checkout,0.0,success
+26970688504,956ef61,test,Complete job,0.0,success
+26970688504,956ef61,metrics,Set up job,2.0,success
+26970688504,956ef61,metrics,Checkout,0.0,success
+26970688504,956ef61,metrics,Setup Python 3.12,0.0,success
+26970688504,956ef61,metrics,Install requests,2.0,success
+26970688504,956ef61,metrics,Download test results,0.0,success
+26970688504,956ef61,metrics,Snapshot metrics,0.0,success
+26970688504,956ef61,metrics,Upload metrics snapshot,1.0,success
+26970688504,956ef61,metrics,Post Setup Python 3.12,0.0,success
+26970688504,956ef61,metrics,Post Checkout,0.0,success
+26970688504,956ef61,metrics,Complete job,0.0,success
+26970365493,14870b3,lint,Set up job,1.0,success
+26970365493,14870b3,lint,Checkout,1.0,success
+26970365493,14870b3,lint,Setup Python 3.12,0.0,success
+26970365493,14870b3,lint,Cache pip,1.0,success
+26970365493,14870b3,lint,Install dependencies,14.0,success
+26970365493,14870b3,lint,Run flake8,0.0,success
+26970365493,14870b3,lint,Post Cache pip,2.0,success
+26970365493,14870b3,lint,Post Setup Python 3.12,0.0,success
+26970365493,14870b3,lint,Post Checkout,0.0,success
+26970365493,14870b3,lint,Complete job,0.0,success
+26970365493,14870b3,test,Set up job,1.0,success
+26970365493,14870b3,test,Checkout,1.0,success
+26970365493,14870b3,test,Setup Python 3.12,0.0,success
+26970365493,14870b3,test,Cache pip,3.0,success
+26970365493,14870b3,test,Install dependencies,15.0,success
+26970365493,14870b3,test,Run pytest,4.0,success
+26970365493,14870b3,test,Upload test results,1.0,success
+26970365493,14870b3,test,Post Cache pip,0.0,success
+26970365493,14870b3,test,Post Setup Python 3.12,0.0,success
+26970365493,14870b3,test,Post Checkout,0.0,success
+26970365493,14870b3,test,Complete job,0.0,success
+26970365493,14870b3,metrics,Set up job,2.0,success
+26970365493,14870b3,metrics,Checkout,0.0,success
+26970365493,14870b3,metrics,Setup Python 3.12,0.0,success
+26970365493,14870b3,metrics,Install requests,4.0,success
+26970365493,14870b3,metrics,Download test results,0.0,success
+26970365493,14870b3,metrics,Snapshot metrics,0.0,success
+26970365493,14870b3,metrics,Upload metrics snapshot,1.0,success
+26970365493,14870b3,metrics,Post Setup Python 3.12,0.0,success
+26970365493,14870b3,metrics,Post Checkout,0.0,success
+26970365493,14870b3,metrics,Complete job,0.0,success
+26970190389,c9b9ccb,lint,Set up job,1.0,success
+26970190389,c9b9ccb,lint,Checkout,1.0,success
+26970190389,c9b9ccb,lint,Setup Python 3.12,0.0,success
+26970190389,c9b9ccb,lint,Cache pip,2.0,success
+26970190389,c9b9ccb,lint,Install dependencies,13.0,success
+26970190389,c9b9ccb,lint,Run flake8,0.0,success
+26970190389,c9b9ccb,lint,Post Cache pip,0.0,success
+26970190389,c9b9ccb,lint,Post Setup Python 3.12,0.0,success
+26970190389,c9b9ccb,lint,Post Checkout,1.0,success
+26970190389,c9b9ccb,lint,Complete job,0.0,success
+26970190389,c9b9ccb,test,Set up job,2.0,success
+26970190389,c9b9ccb,test,Checkout,0.0,success
+26970190389,c9b9ccb,test,Setup Python 3.12,1.0,success
+26970190389,c9b9ccb,test,Cache pip,2.0,success
+26970190389,c9b9ccb,test,Install dependencies,14.0,success
+26970190389,c9b9ccb,test,Run pytest,3.0,success
+26970190389,c9b9ccb,test,Upload test results,1.0,success
+26970190389,c9b9ccb,test,Post Cache pip,1.0,success
+26970190389,c9b9ccb,test,Post Setup Python 3.12,0.0,success
+26970190389,c9b9ccb,test,Post Checkout,0.0,success
+26970190389,c9b9ccb,test,Complete job,0.0,success
+26970190389,c9b9ccb,metrics,Set up job,2.0,success
+26970190389,c9b9ccb,metrics,Checkout,0.0,success
+26970190389,c9b9ccb,metrics,Setup Python 3.12,1.0,success
+26970190389,c9b9ccb,metrics,Install requests,2.0,success
+26970190389,c9b9ccb,metrics,Download test results,1.0,success
+26970190389,c9b9ccb,metrics,Snapshot metrics,0.0,success
+26970190389,c9b9ccb,metrics,Upload metrics snapshot,1.0,success
+26970190389,c9b9ccb,metrics,Post Setup Python 3.12,0.0,success
+26970190389,c9b9ccb,metrics,Post Checkout,0.0,success
+26970190389,c9b9ccb,metrics,Complete job,0.0,success
+26969896780,5ac95ba,lint,Set up job,1.0,success
+26969896780,5ac95ba,lint,Checkout,1.0,success
+26969896780,5ac95ba,lint,Setup Python 3.12,0.0,success
+26969896780,5ac95ba,lint,Cache pip,1.0,success
+26969896780,5ac95ba,lint,Install dependencies,15.0,success
+26969896780,5ac95ba,lint,Run flake8,1.0,success
+26969896780,5ac95ba,lint,Post Cache pip,0.0,success
+26969896780,5ac95ba,lint,Post Setup Python 3.12,0.0,success
+26969896780,5ac95ba,lint,Post Checkout,0.0,success
+26969896780,5ac95ba,lint,Complete job,0.0,success
+26969896780,5ac95ba,test,Set up job,1.0,success
+26969896780,5ac95ba,test,Checkout,1.0,success
+26969896780,5ac95ba,test,Setup Python 3.12,0.0,success
+26969896780,5ac95ba,test,Cache pip,2.0,success
+26969896780,5ac95ba,test,Install dependencies,13.0,success
+26969896780,5ac95ba,test,Run pytest,0.0,success
+26969896780,5ac95ba,test,Upload test results,1.0,success
+26969896780,5ac95ba,test,Post Cache pip,0.0,success
+26969896780,5ac95ba,test,Post Setup Python 3.12,0.0,success
+26969896780,5ac95ba,test,Post Checkout,0.0,success
+26969896780,5ac95ba,test,Complete job,0.0,success
+26969896780,5ac95ba,metrics,Set up job,1.0,success
+26969896780,5ac95ba,metrics,Checkout,1.0,success
+26969896780,5ac95ba,metrics,Setup Python 3.12,0.0,success
+26969896780,5ac95ba,metrics,Install requests,4.0,success
+26969896780,5ac95ba,metrics,Download test results,1.0,success
+26969896780,5ac95ba,metrics,Snapshot metrics,0.0,success
+26969896780,5ac95ba,metrics,Upload metrics snapshot,1.0,success
+26969896780,5ac95ba,metrics,Post Setup Python 3.12,0.0,success
+26969896780,5ac95ba,metrics,Post Checkout,0.0,success
+26969896780,5ac95ba,metrics,Complete job,0.0,success
+26969694352,ec10d95,lint,Set up job,1.0,success
+26969694352,ec10d95,lint,Checkout,0.0,success
+26969694352,ec10d95,lint,Setup Python 3.12,1.0,success
+26969694352,ec10d95,lint,Cache pip,1.0,success
+26969694352,ec10d95,lint,Install dependencies,11.0,success
+26969694352,ec10d95,lint,Run flake8,1.0,failure
+26969694352,ec10d95,lint,Post Cache pip,0.0,skipped
+26969694352,ec10d95,lint,Post Setup Python 3.12,0.0,skipped
+26969694352,ec10d95,lint,Post Checkout,0.0,success
+26969694352,ec10d95,lint,Complete job,0.0,success
+26969694352,ec10d95,metrics,Set up job,1.0,success
+26969694352,ec10d95,metrics,Checkout,1.0,success
+26969694352,ec10d95,metrics,Setup Python 3.12,0.0,success
+26969694352,ec10d95,metrics,Install requests,2.0,success
+26969694352,ec10d95,metrics,Download test results,0.0,success
+26969694352,ec10d95,metrics,Snapshot metrics,0.0,success
+26969694352,ec10d95,metrics,Upload metrics snapshot,1.0,success
+26969694352,ec10d95,metrics,Post Setup Python 3.12,0.0,success
+26969694352,ec10d95,metrics,Post Checkout,0.0,success
+26969694352,ec10d95,metrics,Complete job,0.0,success
+26967836547,5a11dbe,lint,Set up job,1.0,success
+26967836547,5a11dbe,lint,Checkout,0.0,success
+26967836547,5a11dbe,lint,Setup Python 3.12,1.0,success
+26967836547,5a11dbe,lint,Cache pip,0.0,success
+26967836547,5a11dbe,lint,Install dependencies,14.0,success
+26967836547,5a11dbe,lint,Run flake8,0.0,success
+26967836547,5a11dbe,lint,Post Cache pip,0.0,success
+26967836547,5a11dbe,lint,Post Setup Python 3.12,0.0,success
+26967836547,5a11dbe,lint,Post Checkout,1.0,success
+26967836547,5a11dbe,lint,Complete job,0.0,success
+26967836547,5a11dbe,test,Set up job,1.0,success
+26967836547,5a11dbe,test,Checkout,0.0,success
+26967836547,5a11dbe,test,Setup Python 3.12,1.0,success
+26967836547,5a11dbe,test,Cache pip,0.0,success
+26967836547,5a11dbe,test,Install dependencies,13.0,success
+26967836547,5a11dbe,test,Run pytest,0.0,success
+26967836547,5a11dbe,test,Upload test results,1.0,success
+26967836547,5a11dbe,test,Post Cache pip,0.0,success
+26967836547,5a11dbe,test,Post Setup Python 3.12,0.0,success
+26967836547,5a11dbe,test,Post Checkout,0.0,success
+26967836547,5a11dbe,test,Complete job,0.0,success
+26967836547,5a11dbe,metrics,Set up job,2.0,success
+26967836547,5a11dbe,metrics,Checkout,0.0,success
+26967836547,5a11dbe,metrics,Setup Python 3.12,1.0,success
+26967836547,5a11dbe,metrics,Install requests,2.0,success
+26967836547,5a11dbe,metrics,Download test results,0.0,success
+26967836547,5a11dbe,metrics,Snapshot metrics,0.0,success
+26967836547,5a11dbe,metrics,Upload metrics snapshot,1.0,success
+26967836547,5a11dbe,metrics,Post Setup Python 3.12,0.0,success
+26967836547,5a11dbe,metrics,Post Checkout,1.0,success
+26967836547,5a11dbe,metrics,Complete job,0.0,success
+26967135421,dbc72d6,lint,Set up job,1.0,success
+26967135421,dbc72d6,lint,Checkout,1.0,success
+26967135421,dbc72d6,lint,Setup Python 3.12,0.0,success
+26967135421,dbc72d6,lint,Cache pip,1.0,success
+26967135421,dbc72d6,lint,Install dependencies,16.0,success
+26967135421,dbc72d6,lint,Run flake8,1.0,success
+26967135421,dbc72d6,lint,Post Cache pip,2.0,success
+26967135421,dbc72d6,lint,Post Setup Python 3.12,0.0,success
+26967135421,dbc72d6,lint,Post Checkout,0.0,success
+26967135421,dbc72d6,lint,Complete job,0.0,success
+26967135421,dbc72d6,test,Set up job,1.0,success
+26967135421,dbc72d6,test,Checkout,1.0,success
+26967135421,dbc72d6,test,Setup Python 3.12,0.0,success
+26967135421,dbc72d6,test,Cache pip,2.0,success
+26967135421,dbc72d6,test,Install dependencies,12.0,success
+26967135421,dbc72d6,test,Run pytest,0.0,success
+26967135421,dbc72d6,test,Upload test results,1.0,success
+26967135421,dbc72d6,test,Post Cache pip,0.0,success
+26967135421,dbc72d6,test,Post Setup Python 3.12,0.0,success
+26967135421,dbc72d6,test,Post Checkout,1.0,success
+26967135421,dbc72d6,test,Complete job,0.0,success
+26967135421,dbc72d6,metrics,Set up job,2.0,success
+26967135421,dbc72d6,metrics,Checkout,1.0,success
+26967135421,dbc72d6,metrics,Setup Python 3.12,0.0,success
+26967135421,dbc72d6,metrics,Install requests,4.0,success
+26967135421,dbc72d6,metrics,Download test results,1.0,success
+26967135421,dbc72d6,metrics,Snapshot metrics,0.0,success
+26967135421,dbc72d6,metrics,Upload metrics snapshot,1.0,success
+26967135421,dbc72d6,metrics,Post Setup Python 3.12,0.0,success
+26967135421,dbc72d6,metrics,Post Checkout,0.0,success
+26967135421,dbc72d6,metrics,Complete job,0.0,success

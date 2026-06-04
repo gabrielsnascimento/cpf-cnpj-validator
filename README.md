@@ -91,8 +91,10 @@ Para cada execução são coletadas (ver `collect_metrics.py`):
 
 - tempo total do workflow (`workflow_duration`);
 - tempo de cada job (`job_lint_duration`, `job_test_duration`, `job_metrics_duration`);
+- **tempo de cada etapa/step** (arquivo `metrics_steps.csv`: checkout, install, pytest, flake8, ...);
 - status (sucesso/falha);
 - quantidade de testes (`test_count`), falhas (`test_failures`) e duração da suíte (`test_duration_s`);
+- **tempo médio dos testes** (`test_avg_duration_s`);
 - commit (`commit_sha`), mensagem (`commit_message`) e data/hora (`timestamp`).
 
 > ⚠️ Os dados **não** são copiados manualmente da interface — o script consulta
@@ -126,9 +128,9 @@ pytest
 2. **Coletar as métricas reais** das execuções:
    ```bash
    export GITHUB_TOKEN=$(gh auth token)
-   python collect_metrics.py --repo gabrielsnascimento/cpf-cnpj-validator
+   python collect_metrics.py --repo gabrielsnascimento/cpf-cnpj-validator --max-runs 12
    ```
-   → gera o `metrics.csv`.
+   → gera o `metrics.csv` (por run) e o `metrics_steps.csv` (por etapa).
 
 3. **Gerar os 4 gráficos**:
    ```bash
