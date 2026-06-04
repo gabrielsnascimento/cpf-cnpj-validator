@@ -23,6 +23,9 @@ class TestCPFValidos:
 
     def test_outro_cpf_valido(self):
         assert validate_cpf("111.444.777-35") is True
+    
+    def test_identify_cnpj_extra(self):
+        assert identify_and_validate("12345678901234")["tipo"] == "CNPJ"
 
 
 class TestCPFInvalidos:
