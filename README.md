@@ -39,8 +39,11 @@ cpf-cnpj-validator/
 │   └── ci.yml                  # pipeline de 3 jobs (lint → test → metrics)
 ├── collect_metrics.py          # consulta a API do GitHub e gera o metrics.csv
 ├── generate_graphs.py          # lê o metrics.csv e gera os 4 gráficos
-├── entregaveis/                # 📦 entregáveis finais (CSV + gráficos + relatório)
-├── REPORT.md                   # relatório técnico do experimento
+├── entregaveis/                # 📦 entregáveis finais (relatório + CSVs + gráficos)
+│   ├── REPORT.md               # relatório técnico do experimento
+│   ├── metrics.csv             # base de dados (por execução)
+│   ├── metrics_steps.csv       # tempo por etapa (step)
+│   └── graphs/                 # os 4 gráficos
 ├── requirements.txt
 ├── pyproject.toml              # configuração do pytest
 └── .flake8                     # configuração do lint (max-line-length=100)
@@ -152,8 +155,9 @@ Reúne, em um só lugar, os artefatos finais da atividade:
 
 ```
 entregaveis/
-├── metrics.csv                       # base de dados gerada a partir das runs reais
-├── REPORT.md                         # relatório técnico
+├── REPORT.md                         # relatório técnico (vive aqui)
+├── metrics.csv                       # base de dados (por execução)
+├── metrics_steps.csv                 # tempo por etapa/step
 └── graphs/
     ├── 01_tempo_total_pipeline.png   # tempo total do pipeline por execução
     ├── 02_tempo_por_job.png          # tempo por job (barras empilhadas)
@@ -161,8 +165,9 @@ entregaveis/
     └── 04_testes_vs_duracao.png      # nº de testes × duração (scatter)
 ```
 
-É montada automaticamente pelo `scripts/build_entregaveis.py`, que copia o
-`metrics.csv`, os gráficos e o `REPORT.md` para dentro dela.
+O `REPORT.md` é mantido diretamente nesta pasta. O
+`scripts/build_entregaveis.py` copia para cá o `metrics.csv`, o
+`metrics_steps.csv` e os gráficos (mantendo o bundle atualizado).
 
 ---
 
@@ -189,7 +194,7 @@ entregaveis/
 | Jobs sequenciais | par de comparação com a execução em paralelo |
 
 > O detalhamento commit-a-commit (SHAs, run IDs e resultados reais) está no
-> [`REPORT.md`](REPORT.md).
+> [`entregaveis/REPORT.md`](entregaveis/REPORT.md).
 
 ---
 
@@ -197,4 +202,4 @@ entregaveis/
 
 A análise completa — evidências reais das execuções, IDs dos workflows,
 gráficos, respostas às perguntas da atividade, resultados inesperados e
-limitações — está em **[`REPORT.md`](REPORT.md)**.
+limitações — está em **[`entregaveis/REPORT.md`](entregaveis/REPORT.md)**.

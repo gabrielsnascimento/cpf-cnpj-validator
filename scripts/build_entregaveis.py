@@ -1,8 +1,9 @@
 """Organiza os entregáveis finais na pasta entregaveis/.
 
-Copia os 4 gráficos de graphs/, o metrics.csv e o REPORT.md para
-entregaveis/, criando a estrutura necessária. Encerra com mensagem de erro
-clara se algum arquivo obrigatório estiver faltando.
+Copia os 4 gráficos de graphs/ e os CSVs (metrics.csv, metrics_steps.csv)
+para entregaveis/. O REPORT.md é autorado diretamente em entregaveis/ e
+apenas verificado (não copiado). Encerra com mensagem de erro clara se algum
+arquivo obrigatório estiver faltando.
 
 Usa apenas stdlib: shutil, pathlib, sys.
 """
@@ -27,7 +28,8 @@ def check_required():
     required = [ROOT / "graphs" / name for name in GRAPH_NAMES]
     required.append(ROOT / "metrics.csv")
     required.append(ROOT / "metrics_steps.csv")
-    required.append(ROOT / "REPORT.md")
+    # O REPORT.md é autorado diretamente em entregaveis/ (não copiado da raiz).
+    required.append(DEST / "REPORT.md")
 
     missing = [p for p in required if not p.is_file()]
     return required, missing
@@ -61,8 +63,8 @@ def main():
         copied.append(dst)
         print(f"Copiado: {src.relative_to(ROOT)} -> {dst.relative_to(ROOT)}")
 
-    # Copia metrics.csv, metrics_steps.csv e REPORT.md
-    for name in ("metrics.csv", "metrics_steps.csv", "REPORT.md"):
+    # Copia os CSVs (o REPORT.md já vive em entregaveis/, não é copiado)
+    for name in ("metrics.csv", "metrics_steps.csv"):
         src = ROOT / name
         dst = DEST / name
         shutil.copy2(src, dst)

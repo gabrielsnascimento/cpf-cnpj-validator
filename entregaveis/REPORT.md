@@ -346,4 +346,5 @@ resumo: é aceitável, mas longe do ótimo possível.
    ```bash
    python scripts/build_entregaveis.py
    ```
-   → organiza `metrics.csv`, gráficos e este relatório em `entregaveis/`.
+   → copia `metrics.csv`, `metrics_steps.csv` e os gráficos para `entregaveis/`
+   (este relatório já vive em `entregaveis/REPORT.md`).
