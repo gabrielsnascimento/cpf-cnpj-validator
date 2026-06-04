@@ -1,6 +1,7 @@
 """Testes para o módulo de validação de CPF e CNPJ."""
 
 import pytest
+import time
 
 from src.validator import (
     validate_cpf,
@@ -9,6 +10,12 @@ from src.validator import (
     format_cnpj,
     identify_and_validate,
 )
+
+
+class TestLento:
+    def test_demorado(self):
+        time.sleep(3)  # simula um teste lento de propósito
+        assert validate_cpf("529.982.247-25") is True
 
 
 class TestCPFValidos:
